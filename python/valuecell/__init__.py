@@ -18,6 +18,9 @@ from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
+proxy = 'http://127.0.0.1:7890' # 代理设置，此处修改
+os.environ['HTTP_PROXY'] = proxy
+os.environ['HTTPS_PROXY'] = proxy
 
 def load_env_file_early() -> None:
     """Load environment variables from .env file at package import time.
