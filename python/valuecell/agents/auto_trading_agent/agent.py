@@ -74,6 +74,7 @@ class AutoTradingAgent(BaseAgent):
                 env_key=ENV_PARSER_MODEL_ID,
             )
 
+            logger.info(f"test_ENV_PARSER_MODEL_ID:{ENV_PARSER_MODEL_ID}")
             self.parser_agent = Agent(
                 model=parser_model,
                 output_schema=TradingRequest,
@@ -492,7 +493,8 @@ class AutoTradingAgent(BaseAgent):
 
             # Check for environment variable override
             model_id_override = os.getenv(ENV_SIGNAL_MODEL_ID)
-            model_id = model_id_override or config.agent_model
+            model_id = model_id_override
+                        # or config.agent_model)
 
             # Create model with provider auto-detection or explicit provider
             llm_client = create_model(
@@ -503,7 +505,7 @@ class AutoTradingAgent(BaseAgent):
 
             logger.info(
                 f"Initialized AI signal generator: model_id={model_id}, "
-                f"provider={config.agent_provider or 'auto-detect'}"
+                f"provider={config.agent_provider}"
             )
             return AISignalGenerator(llm_client)
 

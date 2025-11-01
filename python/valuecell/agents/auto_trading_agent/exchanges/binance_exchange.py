@@ -3,7 +3,12 @@
 This adapter connects to Binance API for real trading on live accounts.
 Requires: API key and secret from Binance account settings.
 
-WARNING: Real money trading - handle with care!
+WARNING: Real money tr Connect to Binance API
+    - Execute real trades
+    - Monitor real-time positions
+    - Handle Binance-specific errors
+    - Support spot and margin trading
+ading - handle with care!
 """
 
 import logging
@@ -19,12 +24,7 @@ class BinanceExchange(ExchangeBase):
     Binance exchange adapter for live trading.
 
     Features (TODO - Future Implementation):
-    - Connect to Binance API
-    - Execute real trades
-    - Monitor real-time positions
-    - Handle Binance-specific errors
-    - Support spot and margin trading
-
+    -
     WARNING: This implementation is for architecture design only.
     Real implementation requires proper error handling, rate limiting, and security measures.
     """
